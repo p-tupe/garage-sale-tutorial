@@ -1,1 +1,52 @@
-[ { "src": "some source", "desc": "some desc" } ]
+[
+  {
+    "src": "https://placehold.co/600x400",
+    "desc": "this is a placeholder image",
+    "name": "item-name"
+  },
+  {
+    "src": "https://placehold.co/600x400",
+    "desc": "this is a placeholder image",
+    "name": "item-name-2"
+  },
+  {
+    "src": "https://placehold.co/600x400",
+    "desc": "this is a placeholder image",
+    "name": "item-name-2"
+  },
+  {
+    "src": "https://placehold.co/600x400",
+    "desc": "this is a placeholder image",
+    "name": "item-name-2"
+  },
+  {
+    "src": "https://placehold.co/600x400",
+    "desc": "this is a placeholder image",
+    "name": "item-name-2"
+  },
+  {
+    "src": "https://placehold.co/600x400",
+    "desc": "this is a placeholder image",
+    "name": "item-name-2"
+  },
+  {
+    "src": "https://placehold.co/600x400",
+    "desc": "this is a placeholder image",
+    "name": "item-name-2"
+  },
+  {
+    "src": "https://placehold.co/600x400",
+    "desc": "this is a placeholder image",
+    "name": "item-name-2"
+  },
+  {
+    "src": "https://placehold.co/600x400",
+    "desc": "this is a placeholder image",
+    "name": "item-name-2"
+  },
+  {
+    "src": "https://placehold.co/600x400",
+    "desc": "this is a placeholder image",
+    "name": "item-name-3"
+  }
+]

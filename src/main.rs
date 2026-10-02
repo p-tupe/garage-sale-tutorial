@@ -1,20 +1,15 @@
-use std::fs;
-
 use askama::Template;
-use axum::{Router, routing::get};
-use tokio::net::TcpListener;
+use axum::{Router, response::Html, routing::get};
 
 #[tokio::main]
 async fn main() -> Result<(), Box<dyn std::error::Error>> {
-    let data: Vec<Item> = serde_json::from_slice(&fs::read("data.json")?)?;
-    // let data = data.to_string();
-
+    let json_file = include_bytes!("../data.json");
+    let data: Vec<Item> = serde_json::from_slice(json_file)?;
     let route = Router::new().route(
         "/",
-        get(RootTmpl { data }.render().unwrap_or("ok".to_string())),
+        get(Html(RootTmpl { data }.render().unwrap_or("ok".to_string()))),
     );
-    let listener = TcpListener::bind("localhost:8080").await?;
-
+    let listener = tokio::net::TcpListener::bind("127.0.0.1:8089").await?;
     Ok(axum::serve(listener, route).await?)
 }
 
@@ -22,6 +17,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error>> {
 struct Item {
     src: String,
     desc: String,
+    name: String,
 }
 
 #[derive(Template)]
