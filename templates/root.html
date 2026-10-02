@@ -3,6 +3,30 @@
 
   <head>
     <title>Garage Sale</title>
+    <style>
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1em;
+        align-items: center;
+        justify-content: center;
+      }
+
+      img {
+        max-width: 100%;
+        cursor: pointer;
+      }
+
+      div.modal {
+        width:100vw;
+        height:100vh;
+        position:fixed;
+        top:0;
+        left:0;
+        cursor: zoom-out;
+        transform: scale(2);
+      }
+    </style>
   </head>
 
   <body>
@@ -10,36 +34,11 @@
       {% for d in data %}
       <div style="max-width: 300px">
         <h3>{{d.name}}</h3>
-        <img onclick="enlarge(this)" src={{d.src}} alt={{d.name}} loading="lazy" />
+        <img onclick="enlarge(this)" src="{{d.src}}" alt="{{d.name}}" loading="lazy" />
         <p>{{d.desc}}</p>
       </div>
       {% endfor %}
     </main>
-
-    <style>
-    main {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1em;
-      align-items: center;
-      justify-content: center;
-    }
-
-    img {
-      max-width: 100%;
-      cursor: pointer;
-    }
-
-    div.modal {
-      width:100vw;
-      height:100vh;
-      position:fixed;
-      top:0;
-      left:0;
-      cursor: zoom-out;
-      transform: scale(2);
-    }
-    </style>
 
     <script>
     function enlarge(e) {

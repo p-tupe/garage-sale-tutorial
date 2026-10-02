@@ -1,0 +1,7 @@
+[Service]
+ExecStart=/home/ubuntu/garage-sale-tutorial
+User=ubuntu
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
